@@ -1,17 +1,18 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
+    "lib": ["es5", "es6"],
+    "target": "es5",
     "declaration": true,
     "noImplicitAny": false,
     "removeComments": true,
     "noLib": false,
     "allowSyntheticDefaultImports": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "outDir": "./build",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "target": "es6",
-    "sourceMap": true,
-    "outDir": "./dist",
-    "baseUrl": "./"
+    "sourceMap": true
   },
   "exclude": ["node_modules"]
 }
