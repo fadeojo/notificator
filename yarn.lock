@@ -45,6 +45,15 @@
     path-to-regexp "2.2.1"
     uuid "3.3.2"
 
+"@nestjs/microservices@^5.5.0":
+  version "5.5.0"
+  resolved "http://nexus.formsqa.com/content/groups/npm-all/@nestjs/microservices/-/microservices-5.5.0.tgz#9fd6ef84dd1ccc955aed6fac910be874cbd9a1a8"
+  integrity sha512-sOZ2+dPxHvb+RNbmn4wo+MFg9ZHxx9N9RGZmlYQEJQ+s4zk0rJBalzJhKNuNkiL6oJDYYNom98YhWRVvuAkvwg==
+  dependencies:
+    iterare "0.0.8"
+    json-socket "^0.2.1"
+    optional "0.1.4"
+
 "@nestjs/testing@^5.1.0":
   version "5.5.0"
   resolved "http://nexus.formsqa.com/content/groups/npm-all/@nestjs/testing/-/testing-5.5.0.tgz#4a77d78d100a1865668a671a792c13844f7ff43e"
@@ -852,6 +861,11 @@ ci-info@^1.5.0:
   version "1.6.0"
   resolved "http://nexus.formsqa.com/content/groups/npm-all/ci-info/-/ci-info-1.6.0.tgz#2ca20dbb9ceb32d4524a683303313f0304b1e497"
   integrity sha512-vsGdkwSCDpWmP80ncATX7iea5DWQemg1UgCW5J8tqjU3lYw4FBYuj89J0CTVomA7BEfvSZd84GmHko+MxFQU2A==
+
+class-transformer@^0.2.0:
+  version "0.2.0"
+  resolved "http://nexus.formsqa.com/content/groups/npm-all/class-transformer/-/class-transformer-0.2.0.tgz#e54b34112e8ef7f913ef938c81fed8ed949fc9c7"
+  integrity sha512-6N/5WkEmLZCKxyC2CAPYQIJt3pDZzDFag7AExpyWRm7CjaS/U62VDRU+Z2AUrQaNpnuiXRlli0so4PJUqGSVZQ==
 
 class-utils@^0.3.5:
   version "0.3.6"
@@ -2947,6 +2961,11 @@ json-schema@0.2.3:
   version "0.2.3"
   resolved "http://nexus.formsqa.com/content/groups/npm-all/json-schema/-/json-schema-0.2.3.tgz#b480c892e59a2f05954ce727bd3f2a4e882f9e13"
   integrity sha1-tIDIkuWaLwWVTOcnvT8qTogvnhM=
+
+json-socket@^0.2.1:
+  version "0.2.1"
+  resolved "http://nexus.formsqa.com/content/groups/npm-all/json-socket/-/json-socket-0.2.1.tgz#26e7ed8cc131f17aa0136c32068f473b5dbefb22"
+  integrity sha1-JuftjMEx8XqgE2wyBo9HO12++yI=
 
 json-stringify-safe@~5.0.1:
   version "5.0.1"
