@@ -6,6 +6,7 @@ import {
     HttpStatus,
     Logger,
     Post,
+    Request,
 } from '@nestjs/common';
 import { User } from './user.entity';
 import { UserService } from './user.service';
@@ -15,9 +16,9 @@ export class UserController {
     constructor(private readonly userService: UserService) {}
 
     @Get()
-    async find() {
+    async find(@Request() req: Express.Request) {
+        Logger.log(req.user, 'Auth0 user');
         const users = await this.userService.findAll();
-        Logger.log(users, 'User controller');
         return users;
     }
 
@@ -25,10 +26,8 @@ export class UserController {
     async create(@Body() userInput: User) {
         try {
             const user = await this.userService.create(userInput);
-            Logger.log(user, 'User controller');
             return user;
         } catch (error) {
-            Logger.log(error, 'User controller');
             throw new HttpException(error, HttpStatus.FORBIDDEN);
         }
     }

@@ -16,10 +16,10 @@ export class UserService {
     }
 
     async create(user: User): Promise<User | ValidationError[]> {
-        // const errors = await validate(user);
-        // if (errors.length > 0) {
-        //     throw errors;
-        // }
+        const errors = await validate(user);
+        if (errors.length > 0) {
+            throw errors;
+        }
         return await this.userRepository.save(user);
     }
 }
