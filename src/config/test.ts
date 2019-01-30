@@ -9,7 +9,6 @@ export const testConfig: AppConfig = {
         password: 'postgres',
         database: 'notificator_test',
         synchronize: false,
-        logging: true,
         entities: ['src/**/*.entity.ts'],
         migrations: ['src/migration/**/*.ts'],
         subscribers: ['src/subscriber/**/*.ts'],

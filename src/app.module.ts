@@ -1,10 +1,11 @@
-import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
+import { Logger, MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import * as jwt from 'express-jwt';
 import * as jwksRsa from 'jwks-rsa';
 import { Connection } from 'typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { getConfig } from './config';
 import { ConfigService } from './config/config.service';
 import { UserModule } from './user/user.module';
 
@@ -31,7 +32,7 @@ const checkJwt = jwt({
 });
 
 @Module({
-    imports: [TypeOrmModule.forRoot(appConfig.getOrmConfig()), UserModule],
+    imports: [TypeOrmModule.forRoot(), UserModule],
     controllers: [AppController],
     providers: [AppService],
 })

@@ -1,9 +1,23 @@
-import { TypeOrmModuleOptions } from '@nestjs/typeorm';
-import ormConfig from '../../ormconfig.json';
 import { AppConfig } from './config.service';
 
 export const developmentConfig: AppConfig = {
-    orm: ormConfig as TypeOrmModuleOptions,
+    orm: {
+        type: 'postgres',
+        host: 'localhost',
+        port: 5432,
+        username: 'postgres',
+        password: 'postgres',
+        database: 'notificator_dev',
+        synchronize: false,
+        logging: true,
+        entities: ['src/**/*.entity.ts'],
+        migrations: ['src/migration/**/*.ts'],
+        subscribers: ['src/subscriber/**/*.ts'],
+        cli: {
+            migrationsDir: 'src/migration',
+            subscribersDir: 'src/subscriber',
+        },
+    },
     auth: {
         jwksUri: process.env.NOTIFICATOR_JWKSURI,
         audience: process.env.AUDIENCE,

@@ -13,7 +13,6 @@ export interface AppConfig {
     };
 }
 
-@Injectable()
 export class ConfigService {
     private readonly envConfig: AppConfig;
 

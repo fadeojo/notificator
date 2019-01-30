@@ -6,9 +6,9 @@ import { UserService } from './user.service';
 
 describe('UserService', () => {
     let service: UserService;
-    const ormConfig = new ConfigService().getOrmConfig();
 
     beforeAll(async () => {
+        const ormConfig = new ConfigService().getOrmConfig();
         const module: TestingModule = await Test.createTestingModule({
             imports: [
                 TypeOrmModule.forRoot(ormConfig),
