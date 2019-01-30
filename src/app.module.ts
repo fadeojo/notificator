@@ -32,7 +32,7 @@ const checkJwt = jwt({
 });
 
 @Module({
-    imports: [TypeOrmModule.forRoot(), UserModule],
+    imports: [TypeOrmModule.forRoot(appConfig.getOrmConfig()), UserModule],
     controllers: [AppController],
     providers: [AppService],
 })

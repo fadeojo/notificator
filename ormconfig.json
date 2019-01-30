@@ -5,7 +5,7 @@
     "username": "postgres",
     "password": "postgres",
     "database": "notificator_dev",
-    "synchronize": false,
+    "synchronize": true,
     "logging": true,
     "keepConnectionAlive": true,
     "entities": ["src/**/*.entity.ts"],
