@@ -1,5 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { ConfigModule } from '../config/config.module';
 import { ConfigService } from '../config/config.service';
 import { User } from './user.entity';
 import { UserService } from './user.service';
@@ -11,7 +12,12 @@ describe('UserService', () => {
         const ormConfig = new ConfigService().getOrmConfig();
         const module: TestingModule = await Test.createTestingModule({
             imports: [
-                TypeOrmModule.forRoot(ormConfig),
+                TypeOrmModule.forRootAsync({
+                    imports: [ConfigModule],
+                    useFactory: async (config: ConfigService) =>
+                        config.getOrmConfig(),
+                    inject: [ConfigService],
+                }),
                 TypeOrmModule.forFeature([User]),
             ],
             providers: [UserService],

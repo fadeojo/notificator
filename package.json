@@ -19,9 +19,9 @@
         "test:cov": "jest --coverage",
         "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
         "test:e2e": "jest --config ./src/test/jest-e2e.json --detectOpenHandles",
-        "migrate:dev": "NODE_ENV=development ts-node ./src/migration/migrationScript.ts",
-        "migrate:prod": "NODE_ENV=production ts-node ./src/migration/migrationScript.ts",
-        "migrate:test": "NODE_ENV=test ts-node ./src/migration/migrationScript.ts"
+        "migrate:dev": "NODE_ENV=development ts-node ./scripts/migrationScript.ts",
+        "migrate:prod": "NODE_ENV=production ts-node ./scripts/migrationScript.ts",
+        "migrate:test": "NODE_ENV=test ts-node ./scripts/migrationScript.ts"
     },
     "dependencies": {
         "@nestjs/common": "^5.4.0",
