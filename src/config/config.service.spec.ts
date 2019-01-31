@@ -17,8 +17,8 @@ describe('ConfigService', () => {
         expect(service).toBeDefined();
         expect(service.getOrmConfig()).toEqual({
             ...ormConfig,
-            migrations: ['src/migration/**/*.ts'],
-            subscribers: ['src/subscriber/**/*.ts'],
+            migrations: ['src/migration/**/*{.ts,.js}'],
+            subscribers: ['src/subscriber/**/*{.ts,.js}'],
             cli: {
                 migrationsDir: 'src/migration',
                 subscribersDir: 'src/subscriber',

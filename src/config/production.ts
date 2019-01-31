@@ -6,9 +6,9 @@ export const productionConfig: AppConfig = {
         url: process.env.DATABASE_URL || '',
         synchronize: false,
         logging: true,
-        entities: ['src/**/*.entity.ts'],
-        migrations: ['src/migration/**/*.ts'],
-        subscribers: ['src/subscriber/**/*.ts'],
+        entities: ['./**/*.entity{.ts,.js}'],
+        migrations: ['./migration/**/*{.ts,.js}'],
+        subscribers: ['./subscriber/**/*{.ts,.js}'],
         cli: {
             migrationsDir: 'src/migration',
             subscribersDir: 'src/subscriber',

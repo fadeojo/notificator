@@ -9,9 +9,9 @@ export const testConfig: AppConfig = {
         password: 'postgres',
         database: 'notificator_test',
         synchronize: true,
-        entities: ['src/**/*.entity.ts'],
-        migrations: ['src/migration/**/*.ts'],
-        subscribers: ['src/subscriber/**/*.ts'],
+        entities: ['src/**/*.entity{.ts,.js}'],
+        migrations: ['src/migration/**/*{.ts,.js}'],
+        subscribers: ['src/subscriber/**/*{.ts,.js}'],
         cli: {
             migrationsDir: 'src/migration',
             subscribersDir: 'src/subscriber',

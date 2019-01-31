@@ -11,8 +11,8 @@
         "seed": "ts-node src/index.ts",
         "start:dev": "nodemon",
         "start:debug": "nodemon --config nodemon-debug.json",
-        "prestart:prod": "rimraf dist && tsc",
-        "start:prod": "node dist/main.js",
+        "prestart:prod": "rimraf build && tsc -p tsconfig.build.json",
+        "start:prod": "node build/main.js",
         "lint": "tslint -p tsconfig.json -c tslint.json",
         "test": "jest",
         "test:watch": "jest --watch",
@@ -20,7 +20,7 @@
         "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
         "test:e2e": "jest --config ./src/test/jest-e2e.json --detectOpenHandles",
         "migrate:dev": "NODE_ENV=development ts-node ./scripts/migrationScript.ts",
-        "migrate:prod": "NODE_ENV=production ts-node ./scripts/migrationScript.ts",
+        "migrate:prod": "NODE_ENV=production node ./scripts/migrationScript.ts",
         "migrate:test": "NODE_ENV=test ts-node ./scripts/migrationScript.ts"
     },
     "dependencies": {
