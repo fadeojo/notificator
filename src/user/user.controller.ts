@@ -17,7 +17,6 @@ export class UserController {
 
     @Get()
     async find(@Request() req: Express.Request) {
-        Logger.log(req.user, 'Auth0 user');
         const users = await this.userService.findAll();
         return users;
     }

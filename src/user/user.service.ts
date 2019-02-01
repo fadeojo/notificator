@@ -12,7 +12,7 @@ export class UserService {
     ) {}
 
     async findAll(): Promise<User[]> {
-        return await this.userRepository.find();
+        return await this.userRepository.find({ take: 5 });
     }
 
     async create(user: User): Promise<User | ValidationError[]> {
