@@ -19,10 +19,10 @@ export class ConfigService {
     constructor() {
         if (process.env.NODE_ENV === 'production') {
             this.envConfig = productionConfig;
-        } else if (process.env.NODE_ENV === 'development') {
-            this.envConfig = developmentConfig;
-        } else {
+        } else if (process.env.NODE_ENV === 'test') {
             this.envConfig = testConfig;
+        } else {
+            this.envConfig = developmentConfig;
         }
     }
 

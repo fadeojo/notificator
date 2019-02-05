@@ -1,7 +1,9 @@
 import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
+import { GraphQLModule } from '@nestjs/graphql';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import * as jwt from 'express-jwt';
 import * as jwksRsa from 'jwks-rsa';
+import { join } from 'path';
 import { Connection } from 'typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
@@ -37,6 +39,15 @@ const checkJwt = jwt({
             imports: [ConfigModule],
             useFactory: async (config: ConfigService) => config.getOrmConfig(),
             inject: [ConfigService],
+        }),
+        GraphQLModule.forRoot({
+            typePaths: ['./**/*.graphql'],
+            debug: true,
+            playground: true,
+            definitions: {
+                path: join(process.cwd(), 'src/graphql.ts'),
+                outputAs: 'class',
+            },
         }),
         UserModule,
     ],

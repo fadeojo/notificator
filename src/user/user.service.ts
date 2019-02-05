@@ -15,6 +15,10 @@ export class UserService {
         return await this.userRepository.find({ take: 5 });
     }
 
+    async findOneById(id: number): Promise<User> {
+        return this.userRepository.findOneOrFail(id);
+    }
+
     async create(user: User): Promise<User | ValidationError[]> {
         const errors = await validate(user);
         if (errors.length > 0) {
