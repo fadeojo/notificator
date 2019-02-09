@@ -1,7 +1,4 @@
-import { Logger } from '@nestjs/common';
 import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
-import { ValidationError } from 'class-validator';
-import { CreateUserDto } from './dto/createUser.dto';
 import { User, UserRoles } from './user.entity';
 import { UserService } from './user.service';
 
